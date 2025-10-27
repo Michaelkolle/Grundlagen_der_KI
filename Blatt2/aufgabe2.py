@@ -45,7 +45,6 @@ def fitness_funktion(indiv):
     problems= 0
     n = len(indiv.arr)
 
-    # Überprüfe jede Dame gegen jede andere
     for i in range(n):
         for j in range(i + 1, n):
             same_row = indiv.arr[i] == indiv.arr[j]
@@ -94,7 +93,6 @@ def crossover(parent1, parent2):
     child1_bits = parent1.bit_string[:point] + parent2.bit_string[point:]
     child2_bits = parent2.bit_string[:point] + parent1.bit_string[point:]
 
-    # neue Individuen erzeugen
     child1 = Individum()
     child1.bit_string = child1_bits
     bitstring_to_array(child1)
